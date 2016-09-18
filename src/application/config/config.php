@@ -4,20 +4,14 @@
 |--------------------------------------------------------------------------
 | Easy!Appointments - Internal Configuration
 |--------------------------------------------------------------------------
-| 
-| Declare some of the global config values of Easy!Appointments.  
+|
+| Declare some of the global config values of Easy!Appointments.
 | the global "config" variable.
 |
 */
-$config['easyappointments'] = array(
-	'version' => '1.1.0', 	// This must be changed manually.
-	'title' => 'Develop' 	// Leave empty for no title or add BETA, TEST etc ...
-);
-
-$config['ea_version'] = '1.1.0'; // This must be changed manually.
-$config['ea_release_title'] = 'Develop'; // Leave empty for no title or add BETA, TEST etc ...
+$config['ea_version'] = '1.1.1'; // This must be changed manually.
+$config['ea_release_title'] = ''; // Leave empty for no title or add BETA, TEST etc ...
 $config['ea_google_sync_feature'] = Config::GOOGLE_SYNC_FEATURE;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -88,25 +82,40 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language'] = 'english'; // default language
 
+$config['language'] = defined('Config::LANGUAGE') ? Config::LANGUAGE : 'english';
+
+/*
+|--------------------------------------------------------------------------
+| Available Languages
+|--------------------------------------------------------------------------
+|
+| Each item of this array must be a directory with the translation files in
+| the /application/language directory. The users will be able to select one
+| of these languages.
+|
+*/
 $config['available_languages'] = array(
-    'english', 
-    'german', 
-    'greek', 
-    'hungarian', 
+    'english',
+    'german',
+    'greek',
+    'hungarian',
     'portuguese',
     'chinese',
-    'dutch', 
-    'french', 
-    'japanese', 
-    'polish', 
-    'spanish', 
-    'italian', 
-    'danish', 
-    'luxembourgish', 
+    'dutch',
+    'french',
+    'japanese',
+    'polish',
+    'spanish',
+    'italian',
+    'danish',
+    'luxembourgish',
     'slovak',
-    'finnish'
+    'finnish',
+    'russian',
+    'romanian',
+    'turkish',
+    'hindi'
 );
 
 /*

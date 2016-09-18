@@ -1,5 +1,5 @@
 <?php
-// English
+// Chinese
 $lang['page_title'] = '准备预约';
 $lang['step_one_title'] = '选择服务人员以及服务项目';
 $lang['select_service'] = '选择您需要的服务项目';
@@ -264,3 +264,13 @@ $lang['google_calendar_selected'] = '谷歌日历被选定!';
 $lang['oops_something_went_wrong'] = '不好！出了一些问题!';
 $lang['could_not_add_to_google_calendar'] = '您的预约不能添加到谷歌日历.';
 $lang['ea_update_success'] = '预约系统已经成功更新!';
+$lang['require_captcha'] = 'Require CAPTCHA';
+$lang['require_captcha_hint'] = 'When enabled, the customers will have to type a random generated CAPTCHA string before booking/updating an appointment.';
+$lang['captcha_is_wrong'] = 'CAPTCHA verification failed, please try again.';
+$lang['any_provider'] = 'Any Provider';
+$lang['requested_hour_is_unavailable'] = 'The requested appointment is unfornately not available. Please select a different hour for your appointment.';
+$lang['customer_notifications'] = 'Customer Notifications';
+$lang['customer_notifications_hint'] = 'Defines whether the customer will receive email notifications whenever there is a schedule change on one of his appointments.';
+$lang['date_format'] = 'Date Format';
+$lang['date_format_hint'] = 'Change the date display format (D - Date, M - Month, Y - Year).';
+$lang['google_analytics_code_hint'] = 'Add your Google Analytics ID to be included in the booking page.';

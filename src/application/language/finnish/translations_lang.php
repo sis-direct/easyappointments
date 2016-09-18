@@ -1,5 +1,5 @@
 <?php
-// English
+// Finnish
 $lang['page_title'] = 'Varaa aika';
 $lang['step_one_title'] = 'Valitse palvelu ja henkilö';
 $lang['select_service'] = 'Valitse palvelupaketti';
@@ -164,7 +164,7 @@ $lang['company_link_hint'] = 'Kotisivulinkin tulisi ohjata yrityksen kotisivuill
 $lang['go_to_booking_page'] = 'Palaa ajanvaraussivulle';
 $lang['settings_saved'] = 'Asetukset tallennettiin onnistuneesti!';
 $lang['general'] = 'Yleinen';
-$lang['business_logic'] = 'Business Logic';
+$lang['business_logic'] = 'Työajat';
 $lang['current_user'] = 'Nykyinen käyttäjä';
 $lang['about_ea'] = 'Tietoja E!A:sta';
 $lang['edit_working_plan_hint'] = 'Merkitse päivät ja tunnit jolloin yritys vastaanottaa varauksia. Voit itse asettaa varauksia näiden aikojen ulkopuolelle, mutta asiakkaat eivät voi varata niitä itsenäisesti. Tämä työsuunnitelma on oletussuunnitelma kaikille työntekijöille.';
@@ -264,3 +264,13 @@ $lang['google_calendar_selected'] = 'Google-kalenteri valittiin onnistuneesti!';
 $lang['oops_something_went_wrong'] = 'Oho! Jotain meni pieleen!';
 $lang['could_not_add_to_google_calendar'] = 'Varaustasi ei pystytty lisäämään Google-kalenteri tiliisi.';
 $lang['ea_update_success'] = 'Easy!Appointments päivitettiin onnistuneesti!';
+$lang['require_captcha'] = 'Vaadi CAPTCHA';
+$lang['require_captcha_hint'] = 'Jos aktivoitu, asiakkaan pitää kirjoittaa satunnainen CAPTCHA varmennus ennen varauksen lisäämistä/päivittämistä.';
+$lang['captcha_is_wrong'] = 'CAPTCHA varmennus epäonnistui, ole hyvä ja yritä uudelleen.';
+$lang['any_provider'] = 'Kuka tahansa';
+$lang['requested_hour_is_unavailable'] = 'Pyydetty aika ei ole vapaana. Ole hyvä ja valitse uusi aika.';
+$lang['customer_notifications'] = 'Asiakas ilmoitukset';
+$lang['customer_notifications_hint'] = 'Jos aktivoitu, asiakkaalle lähetetään ilmoitus jos varattuun aikaan tulee muutoksia.';
+$lang['date_format'] = 'Päiväyksen muoto';
+$lang['date_format_hint'] = 'Vaihda päiväyksen esitysmuoto (D - Päivä, M - Kuukausi, Y - Vuosi).';
+$lang['google_analytics_code_hint'] = 'Lisää Google Analytics ID varaussivulle.';

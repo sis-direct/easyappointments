@@ -5,7 +5,7 @@
  * 
  * @package     EasyAppointments
  * @author      A.Tselegidis <alextselegidis@gmail.com>
- * @copyright   Copyright (c) 2013 - 2015, Alex Tselegidis
+ * @copyright   Copyright (c) 2013 - 2016, Alex Tselegidis
  * @license     http://opensource.org/licenses/GPL-3.0 - GPLv3 
  * @link        http://easyappointments.org
  * @since       v1.0.0
@@ -629,7 +629,7 @@ class Unit_tests_providers_model extends CI_Driver {
         $provider = array(
             'last_name' => 'Doe',
             'first_name' => 'John',
-            'email' => 'alextselegidis@gmail.com',
+            'email' => 'john@doe.com',
             'phone_number' => '0123456789',
             'address' => 'Abbey Road 18',
             'city' => 'London',
@@ -706,7 +706,7 @@ class Unit_tests_providers_model extends CI_Driver {
         $provider = array(
             'last_name' => 'Doe',
             'first_name' => 'John',
-            'email' => 'alextselegidis@gmail.com',
+            'email' => 'john@doe.com',
             'phone_number' => '0123456789',
             'address' => 'Abbey Road 18',
             'city' => 'London',
@@ -746,7 +746,7 @@ class Unit_tests_providers_model extends CI_Driver {
         $provider = array(
             'last_name' => 'Doe',
             'first_name' => 'John',
-            'email' => 'alextselegidis@gmail.com',
+            'email' => 'john@doe.com',
             'phone_number' => '0123456789',
             'address' => 'Abbey Road 18',
             'city' => 'London',
@@ -808,7 +808,7 @@ class Unit_tests_providers_model extends CI_Driver {
         $provider = array(
             'last_name' => 'Doe',
             'first_name' => 'John',
-            'email' => 'alextselegidis@gmail.com',
+            'email' => 'john@doe.com',
             'phone_number' => '0123456789',
             'address' => 'Abbey Road 18',
             'city' => 'London',

@@ -1,5 +1,5 @@
 <?php
-// English
+// French
 $lang['page_title'] = 'Prendre rendez-vous avec ...';
 $lang['step_one_title'] = 'Choisissez une prestation et un exécutant';
 $lang['select_service'] = 'Choisissez une prestation';
@@ -264,3 +264,13 @@ $lang['google_calendar_selected'] = 'Le calendrier Google a été sélectionné 
 $lang['oops_something_went_wrong'] = 'Oops! Une erreur s\'est produite !';
 $lang['could_not_add_to_google_calendar'] = 'Votre rendez-vous ne peux pas être ajoutée à votre compte calendrier Google.';
 $lang['ea_update_success'] = 'Easy!Appointments à été mis à jour avec succès !';
+$lang['require_captcha'] = 'Require CAPTCHA';
+$lang['require_captcha_hint'] = 'When enabled, the customers will have to type a random generated CAPTCHA string before booking/updating an appointment.';
+$lang['captcha_is_wrong'] = 'CAPTCHA verification failed, please try again.';
+$lang['any_provider'] = 'Any Provider';
+$lang['requested_hour_is_unavailable'] = 'The requested appointment is unfornately not available. Please select a different hour for your appointment.';
+$lang['customer_notifications'] = 'Customer Notifications';
+$lang['customer_notifications_hint'] = 'Defines whether the customer will receive email notifications whenever there is a schedule change on one of his appointments.';
+$lang['date_format'] = 'Date Format';
+$lang['date_format_hint'] = 'Change the date display format (D - Date, M - Month, Y - Year).';
+$lang['google_analytics_code_hint'] = 'Add your Google Analytics ID to be included in the booking page.';

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" /> 
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#35A768">
@@ -9,72 +9,77 @@
 
     <?php
         // ------------------------------------------------------------
-        // INCLUDE CSS FILES 
+        // INCLUDE CSS FILES
         // ------------------------------------------------------------ ?>
-    <link 
-        rel="stylesheet" 
-        type="text/css" 
+
+    <link
+        rel="stylesheet"
+        type="text/css"
         href="<?php echo $this->config->item('base_url'); ?>/assets/ext/bootstrap/css/bootstrap.min.css">
-    <link 
-        rel="stylesheet" 
-        type="text/css" 
+    <link
+        rel="stylesheet"
+        type="text/css"
         href="<?php echo $this->config->item('base_url'); ?>/assets/ext/jquery-ui/jquery-ui.min.css">
-    <link 
-        rel="stylesheet" 
-        type="text/css" 
+    <link
+        rel="stylesheet"
+        type="text/css"
         href="<?php echo $this->config->item('base_url'); ?>/assets/ext/jquery-qtip/jquery.qtip.min.css">
-    <link 
-        rel="stylesheet" 
-        type="text/css" 
+    <link
+        rel="stylesheet"
+        type="text/css"
         href="<?php echo $this->config->item('base_url'); ?>/assets/css/frontend.css">
-    <link 
-        rel="stylesheet" 
-        type="text/css" 
+    <link
+        rel="stylesheet"
+        type="text/css"
         href="<?php echo $this->config->item('base_url'); ?>/assets/css/general.css">
 
     <?php
         // ------------------------------------------------------------
-        // INCLUDE JAVASCRIPT FILES 
+        // INCLUDE JAVASCRIPT FILES
         // ------------------------------------------------------------ ?>
-    <script 
-        type="text/javascript" 
+
+    <script
+        type="text/javascript"
         src="<?php echo $this->config->item('base_url'); ?>/assets/ext/jquery/jquery.min.js"></script>
-    <script 
-        type="text/javascript" 
+    <script
+        type="text/javascript"
         src="<?php echo $this->config->item('base_url'); ?>/assets/ext/jquery-ui/jquery-ui.min.js"></script>
-    <script 
-        type="text/javascript" 
+    <script
+        type="text/javascript"
         src="<?php echo $this->config->item('base_url'); ?>/assets/ext/jquery-qtip/jquery.qtip.min.js"></script>
-    <script 
-        type="text/javascript" 
+    <script
+        type="text/javascript"
         src="<?php echo $this->config->item('base_url'); ?>/assets/ext/bootstrap/js/bootstrap.min.js"></script>
-    <script 
-        type="text/javascript" 
+    <script
+        type="text/javascript"
         src="<?php echo $this->config->item('base_url'); ?>/assets/ext/datejs/date.js"></script>
-    <script 
-        type="text/javascript" 
+    <script
+        type="text/javascript"
         src="<?php echo $this->config->item('base_url'); ?>/assets/js/frontend_book.js"></script>
-    
+
     <?php
         // ------------------------------------------------------------
         // WEBPAGE FAVICON
         // ------------------------------------------------------------ ?>
-    <link rel="icon" type="image/x-icon" 
+
+    <link rel="icon" type="image/x-icon"
             href="<?php echo $this->config->item('base_url'); ?>/assets/img/favicon.ico">
 
-    <link rel="icon" sizes="192x192" 
+    <link rel="icon" sizes="192x192"
             href="<?php echo $this->config->item('base_url'); ?>/assets/img/logo.png">
 
     <?php
         // ------------------------------------------------------------
         // VIEW FILE JAVASCRIPT CODE
         // ------------------------------------------------------------ ?>
+
     <script type="text/javascript">
         var GlobalVariables = {
             availableServices   : <?php echo json_encode($available_services); ?>,
             availableProviders  : <?php echo json_encode($available_providers); ?>,
             baseUrl             : <?php echo '"' . $this->config->item('base_url') . '"'; ?>,
             manageMode          : <?php echo ($manage_mode) ? 'true' : 'false'; ?>,
+            dateFormat          : <?php echo json_encode($date_format); ?>,
             appointmentData     : <?php echo json_encode($appointment_data); ?>,
             providerData        : <?php echo json_encode($provider_data); ?>,
             customerData        : <?php echo json_encode($customer_data); ?>,
@@ -83,9 +88,9 @@
 
         var EALang = <?php echo json_encode($this->lang->language); ?>;
         var availableLanguages = <?php echo json_encode($this->config->item('available_languages')); ?>;
-        
+
         $(document).ready(function() {
-            FrontendBook.initialize(true, GlobalVariables.manageMode); 
+            FrontendBook.initialize(true, GlobalVariables.manageMode);
             // GeneralFunctions.centerElementOnPage($('#book-appointment-wizard'));
             GeneralFunctions.enableLanguageSelection($('#select-language'));
         });
@@ -96,19 +101,20 @@
     <div id="main" class="container">
         <div class="wrapper row">
             <div id="book-appointment-wizard" class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-                
-                <?php 
+
+                <?php
                     // ------------------------------------------------------
-                    // FRAME TOP BAR 
+                    // FRAME TOP BAR
                     // ------------------------------------------------------ ?>
+
                 <div id="header">
                     <span id="company-name"><?php echo $company_name; ?></span>
-                    
+
                     <div id="steps">
                         <div id="step-1" class="book-step active-step" title="<?php echo $this->lang->line('step_one_title'); ?>">
                             <strong>1</strong>
                         </div>
-                        
+
                         <div id="step-2" class="book-step" title="<?php echo $this->lang->line('step_two_title'); ?>">
                             <strong>2</strong>
                         </div>
@@ -120,7 +126,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <?php
                     // ------------------------------------------------------
                     // CANCEL APPOINTMENT BUTTON
@@ -129,13 +135,13 @@
                         echo '
                             <div id="cancel-appointment-frame" class="row">
                                 <div class="col-xs-12 col-sm-10">
-                                    <p>' . 
+                                    <p>' .
                                         $this->lang->line('cancel_appointment_hint') .
                                     '</p>
                                 </div>
                                 <div class="col-xs-12 col-sm-2">
                                     <form id="cancel-appointment-form" method="post"
-                                            action="' . $this->config->item('base_url') 
+                                            action="' . $this->config->item('base_url')
                                             . '/index.php/appointments/cancel/' . $appointment_data['hash'] . '">
                                         <input type="hidden" name="csrfToken" value="' . $this->security->get_csrf_hash() . '" />
                                         <textarea name="cancel_reason" style="display:none"></textarea>
@@ -144,10 +150,10 @@
                                     </form>
                                 </div>
                             </div>';
-                    }   
+                    }
                 ?>
-                
-                <?php 
+
+                <?php
                     // ------------------------------------------------------
                     // DISPLAY EXCEPTIONS (IF ANY)
                     // ------------------------------------------------------
@@ -159,15 +165,17 @@
                         }
                         echo '</div>';
                     }
-                ?>            
-                <?php 
+                ?>
+
+                <?php
                     // ------------------------------------------------------
-                    // SELECT SERVICE AND PROVIDER 
+                    // SELECT SERVICE AND PROVIDER
                     // ------------------------------------------------------ ?>
-                <div id="wizard-frame-1" class="wizard-frame">                
+
+                <div id="wizard-frame-1" class="wizard-frame">
                     <div class="frame-container">
                         <h3 class="frame-title"><?php echo $this->lang->line('step_one_title'); ?></h3>
-                        
+
                         <div class="frame-content">
                             <div class="form-group">
                                 <label for="select-service">
@@ -175,8 +183,8 @@
                                 </label>
 
                                 <select id="select-service" class="col-md-4 form-control">
-                                    <?php 
-                                        // Group services by category, only if there is at least one service 
+                                    <?php
+                                        // Group services by category, only if there is at least one service
                                         // with a parent category.
                                         $has_category = FALSE;
                                         foreach($available_services as $service) {
@@ -185,7 +193,7 @@
                                                 break;
                                             }
                                         }
-                                        
+
                                         if ($has_category) {
                                             $grouped_services = array();
 
@@ -196,7 +204,7 @@
                                                     }
 
                                                     $grouped_services[$service['category_name']][] = $service;
-                                                } 
+                                                }
                                             }
 
                                             // We need the uncategorized services at the end of the list so
@@ -211,11 +219,11 @@
                                             foreach($grouped_services as $key => $group) {
                                                 $group_label = ($key != 'uncategorized')
                                                         ? $group[0]['category_name'] : 'Uncategorized';
-                                                
+
                                                 if (count($group) > 0) {
                                                     echo '<optgroup label="' . $group_label . '">';
                                                     foreach($group as $service) {
-                                                        echo '<option value="' . $service['id'] . '">' 
+                                                        echo '<option value="' . $service['id'] . '">'
                                                             . $service['name'] . '</option>';
                                                     }
                                                     echo '</optgroup>';
@@ -223,44 +231,45 @@
                                             }
                                         }  else {
                                             foreach($available_services as $service) {
-                                                echo '<option value="' . $service['id'] . '">' 
+                                                echo '<option value="' . $service['id'] . '">'
                                                             . $service['name'] . '</option>';
                                             }
                                         }
                                     ?>
                                 </select>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="select-provider">
                                     <strong><?php echo $this->lang->line('select_provider'); ?></strong>
                                 </label>
-                                
+
                                 <select id="select-provider" class="col-md-4 form-control"></select>
                             </div>
-                            
+
                             <div id="service-description" style="display:none;"></div>
                         </div>
                     </div>
-                    
+
                     <div class="command-buttons">
-                        <button type="button" id="button-next-1" class="btn button-next btn-primary" 
+                        <button type="button" id="button-next-1" class="btn button-next btn-primary"
                                 data-step_index="1">
-                            <?php echo $this->lang->line('next'); ?> 
+                            <?php echo $this->lang->line('next'); ?>
                             <span class="glyphicon glyphicon-forward"></span>
                         </button>
                     </div>
                 </div>
 
-                <?php 
+                <?php
                     // ------------------------------------------------------
                     // SELECT APPOINTMENT DATE
                     // ------------------------------------------------------ ?>
+
                 <div id="wizard-frame-2" class="wizard-frame" style="display:none;">
                     <div class="frame-container">
-                        
+
                         <h3 class="frame-title"><?php echo $this->lang->line('step_two_title'); ?></h3>
-                        
+
                         <div class="frame-content row">
                             <div class="col-md-6">
                                 <div id="select-date"></div>
@@ -272,14 +281,14 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="command-buttons">
-                        <button type="button" id="button-back-2" class="btn button-back btn-default" 
+                        <button type="button" id="button-back-2" class="btn button-back btn-default"
                                 data-step_index="2">
-                            <span class="glyphicon glyphicon-backward"></span> 
+                            <span class="glyphicon glyphicon-backward"></span>
                             <?php echo $this->lang->line('back'); ?>
                         </button>
-                        <button type="button" id="button-next-2" class="btn button-next btn-primary" 
+                        <button type="button" id="button-next-2" class="btn button-next btn-primary"
                                 data-step_index="2">
                             <?php echo $this->lang->line('next'); ?>
                             <span class="glyphicon glyphicon-forward"></span>
@@ -287,15 +296,16 @@
                     </div>
                 </div>
 
-                <?php 
+                <?php
                     // ------------------------------------------------------
                     // ENTER CUSTOMER DATA
                     // ------------------------------------------------------ ?>
+
                 <div id="wizard-frame-3" class="wizard-frame" style="display:none;">
                     <div class="frame-container">
-                        
+
                         <h3 class="frame-title"><?php echo $this->lang->line('step_three_title'); ?></h3>
-                        
+
                         <div class="frame-content row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -338,13 +348,13 @@
                             <em id="form-message" class="text-danger"><?php echo $this->lang->line('fields_are_required'); ?></em>
                         </div>
                     </div>
-                    
+
                     <div class="command-buttons">
-                        <button type="button" id="button-back-3" class="btn button-back btn-default" 
-                                data-step_index="3"><span class="glyphicon glyphicon-backward"></span> 
+                        <button type="button" id="button-back-3" class="btn button-back btn-default"
+                                data-step_index="3"><span class="glyphicon glyphicon-backward"></span>
                             <?php echo $this->lang->line('back'); ?>
                         </button>
-                        <button type="button" id="button-next-3" class="btn button-next btn-primary" 
+                        <button type="button" id="button-next-3" class="btn button-next btn-primary"
                                 data-step_index="3">
                             <?php echo $this->lang->line('next'); ?>
                             <span class="glyphicon glyphicon-forward"></span>
@@ -352,10 +362,11 @@
                     </div>
                 </div>
 
-                <?php 
+                <?php
                     // ------------------------------------------------------
-                    // APPOINTMENT DATA CONFIRMATION 
+                    // APPOINTMENT DATA CONFIRMATION
                     // ------------------------------------------------------ ?>
+
                 <div id="wizard-frame-4" class="wizard-frame" style="display:none;">
                     <div class="frame-container">
                         <h3 class="frame-title"><?php echo $this->lang->line('step_four_title'); ?></h3>
@@ -363,12 +374,25 @@
                             <div id="appointment-details" class="col-md-6"></div>
                             <div id="customer-details" class="col-md-6"></div>
                         </div>
+                        <?php if ($this->settings_model->get_setting('require_captcha') === '1'): ?>
+                        <div class="frame-content row">
+                            <div class="col-md-6 col-sm-12">
+                                <h4 class="captcha-title">
+                                    CAPTCHA
+                                    <small class="glyphicon glyphicon-refresh"></small>
+                                </h4>
+                                <img class="captcha-image" src="<?php echo $this->config->item('base_url'); ?>/index.php/captcha">
+                                <input class="captcha-text" type="text" value="" />
+                                <span id="captcha-hint" class="help-block" style="opacity:0">&nbsp;</span>
+                            </div>
+                        </div>
+                        <?php endif; ?>
                     </div>
-                    
+
                     <div class="command-buttons">
-                        <button type="button" id="button-back-4" class="btn button-back btn-default" 
+                        <button type="button" id="button-back-4" class="btn button-back btn-default"
                                 data-step_index="4">
-                            <span class="glyphicon glyphicon-backward"></span> 
+                            <span class="glyphicon glyphicon-backward"></span>
                             <?php echo $this->lang->line('back'); ?>
                         </button>
                         <form id="book-appointment-form" style="display:inline-block" method="post">
@@ -384,24 +408,34 @@
                         </form>
                     </div>
                 </div>
-                
-                <?php 
+
+                <?php
                     // ------------------------------------------------------
-                    // FRAME FOOTER 
+                    // FRAME FOOTER
                     // ------------------------------------------------------ ?>
+
                 <div id="frame-footer">
-                    Powered By 
+                    Powered By
                     <a href="http://easyappointments.org" target="_blank">Easy!Appointments</a>
                     |
                     <span id="select-language" class="label label-success">
     		        	<?php echo ucfirst($this->config->item('language')); ?>
     		        </span>
+                    <?php if ($this->session->userdata('user_id')): ?>
+                        |
+                        <a href="<?php echo $this->config->item('base_url'); ?>/index.php/backend">
+                            <?php echo $this->lang->line('backend_section'); ?>
+                        </a>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
     </div>
-    <script 
-        type="text/javascript" 
+
+    <script
+        type="text/javascript"
         src="<?php echo $this->config->item('base_url'); ?>/assets/js/general_functions.js"></script>
+
+    <?php google_analytics_script(); ?>
 </body>
 </html>
